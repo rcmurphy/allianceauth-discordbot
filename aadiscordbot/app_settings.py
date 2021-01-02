@@ -13,8 +13,8 @@ def get_site_url():  # regex sso url
     return url
 
 
-def authanalitics_active():
-    return 'authanalitics' in settings.INSTALLED_APPS
+def authanalytics_active():
+    return 'authanalytics' in settings.INSTALLED_APPS
 
 
 def timezones_active():
