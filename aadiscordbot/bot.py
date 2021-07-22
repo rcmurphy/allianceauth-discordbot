@@ -74,10 +74,10 @@ class AuthBot(commands.Bot):
         for hook in hooks.get_hooks("discord_cogs_hook"):
             for cog in hook():
                 try:
+                    logger.debug(f"Attempting to load ${cog}")
                     self.load_extension(cog)
                 except Exception as e:
-                    print(f"Failed to load cog {cog}", file=sys.stderr)
-                    traceback.print_exc()
+                    logger.error(f"Failed to load cog {cog}", file=sys.stderr, exc_info=1)
 
 
     def on_queue_message(self, body, message):
